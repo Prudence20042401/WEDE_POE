@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kopano Construction Skills Centre</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Kopano Construction Skills Centre provides practical construction skills training for youth in South Africa.">
+    <meta name="keywords" content="Construction Training, Skills Centre, Building Courses, Youth Development">
+    <meta name="author" content="Kopano Construction Skills Centre">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Kopano Construction Skills Centre</h1>
+    <nav>
+        <a href="index.html" >Home</a>
+        <a href="about.html">About</a>
+        <a href="courses.html">Courses</a>
+        <a href="apply.html">Apply</a>
+        <a href="enquiry.html"class="active">Enquiry</a>
+        <a href="contact.html">Contact</a>
+        <a href="donate.html">Donate</a>
+        <a href="gallery.html">Gallery</a>
+    </nav>
+</header>
+  <main id="main" class="container">
+    <h1>Enquiry Form</h1>
+
+    <form id="enquiryForm" novalidate>
+      <label for="course">Select Course</label>
+      <select id="course" name="course" required>
+        <option value="bricklaying">Bricklaying</option>
+        <option value="plumbing">Plumbing</option>
+        <option value="painting">Painting</option>
+        <option value="carpentry">Carpentry</option>
+      </select>
+
+      <label for="ename">Full Name</label>
+      <input id="ename" name="ename" type="text" placeholder="Your full name">
+
+      <label for="eemail">Email</label>
+      <input id="eemail" name="eemail" type="email" placeholder="you@example.com">
+
+      <label for="ephone">Phone (optional)</label>
+      <input id="ephone" name="ephone" type="tel" placeholder="Optional">
+
+    
+    </form>
+
+    <p id="response" aria-live="polite"></p>
+  </main>
+
+  <footer>
+    <p>© 2025 Kopano Construction Skills Centre</p>
+  </footer>
+
+  <script src="javascript/main.js"></script>
+</body>
+</html>

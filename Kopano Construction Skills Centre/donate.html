@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate | Kopano Construction Skills Centre</title>
+  <meta name="description" content="Support Kopano Construction Skills Centre in empowering youth through practical construction training and skills development.">
+  <meta name="keywords" content="Donate to Kopano, Construction Skills Training, Support Youth Development">
+  <meta name="author" content="Kopano Construction Skills Centre">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <h1>Kopano Construction Skills Centre</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="courses.html">Courses</a>
+    <a href="apply.html">Apply</a>
+    <a href="enquiry.html">Enquiry</a>
+    <a href="contact.html">Contact</a>
+    <a href="donate.html"class="active">Donate</a>
+    <a href="gallery.html">Gallery</a>
+  </nav>
+</header>
+
+<main>
+  <!-- Donate Section -->
+  <section class="donate-section">
+    <h2>Support Our Mission</h2>
+    <p>
+      Kopano Construction Skills Centre empowers youth with hands-on construction skills that open real opportunities. 
+      Your support helps us provide tools, equipment, materials, and accessible training to our community.
+    </p>
+    <button class="donate-btn" id="donateBtn" aria-label="Donate Now">Donate Now</button>
+  </section>
+
+  <!-- Donation Modal -->
+  <div class="donate-modal" id="donateModal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeBtn">&times;</span>
+      <h3>Choose Your Donation Method</h3>
+      <p>Thank you for your generosity! Please choose a donation option below:</p>
+
+      <div class="donation-options">
+        <!-- PayPal Option -->
+        <button class="option-btn" onclick="window.location.href='https://www.paypal.com'">Donate via PayPal</button>
+        
+        <!-- Bank Transfer Option -->
+        <button class="option-btn" id="bankTransferBtn">Donate via Bank Transfer</button>
+        
+        <!-- Credit Card Option -->
+        <button class="option-btn" id="creditCardBtn">Donate via Credit Card</button>
+      </div>
+      
+      <!-- Bank Transfer Form (Hidden) -->
+      <div id="bankTransferForm" class="form-container" style="display: none;">
+        <h4>Bank Transfer Details:</h4>
+        <p>Please use the following bank details to transfer your donation:</p>
+        <p><strong>Bank Name:</strong> ABC Bank</p>
+        <p><strong>Account Number:</strong> 1234567890</p>
+        <p><strong>Account Name:</strong> Kopano Construction Skills Centre</p>
+        <p>Once you have made the transfer, please email the proof of payment to <a href="mailto:info@kopanocenter.org">info@kopanocenter.org</a></p>
+        <button class="back-btn" onclick="toggleBankTransferForm()">Back to Donation Options</button>
+      </div>
+      
+      <!-- Credit Card Form (Hidden) -->
+      <div id="creditCardForm" class="form-container" style="display: none;">
+        <h4>Credit Card Donation:</h4>
+        <p>Please enter your credit card details below to donate:</p>
+        <form action="https://www.example-payment-gateway.com" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="text" name="cardNumber" placeholder="Card Number" required>
+          <input type="text" name="expirationDate" placeholder="Expiration Date" required>
+          <input type="text" name="cvv" placeholder="CVV" required>
+          <button type="submit" class="option-btn">Submit Donation</button>
+        </form>
+        <button class="back-btn" onclick="toggleCreditCardForm()">Back to Donation Options</button>
+      </div>
+      
+    </div>
+  </div>
+  
+</main>
+
+<footer>
+  <p>© 2025 Kopano Construction Skills Centre</p>
+</footer>
+
+<script src="javascript/main.js"></script>
+<script>
+  // Get the modal
+  var modal = document.getElementById('donateModal');
+  // Get the button that opens the modal
+  var donateBtn = document.getElementById('donateBtn');
+  // Get the <span> element that closes the modal
+  var closeBtn = document.getElementById('closeBtn');
+
+  // Get bank transfer and credit card form containers
+  var bankTransferForm = document.getElementById('bankTransferForm');
+  var creditCardForm = document.getElementById('creditCardForm');
+
+  // Bank Transfer Button Action
+  document.getElementById('bankTransferBtn').onclick = function() {
+    bankTransferForm.style.display = "block";
+    modal.style.display = "none"; // Hide the modal to show the form
+  }
+
+  // Credit Card Button Action
+  document.getElementById('creditCardBtn').onclick = function() {
+    creditCardForm.style.display = "block";
+    modal.style.display = "none"; // Hide the modal to show the form
+  }
+
+  // Close the modal when the user clicks on <span> (x)
+  closeBtn.onclick = function() {
+    modal.style.display = "none";
+  }
+
+  // Close the modal if the user clicks outside the modal
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+
+  // Toggle back to donation options from bank transfer form
+  function toggleBankTransferForm() {
+    bankTransferForm.style.display = "none";
+    modal.style.display = "block";
+  }
+
+  // Toggle back to donation options from credit card form
+  function toggleCreditCardForm() {
+    creditCardForm.style.display = "none";
+    modal.style.display = "block";
+  }
+
+  // Show the donation modal when the "Donate Now" button is clicked
+  donateBtn.onclick = function() {
+    modal.style.display = "block";
+  }
+</script>
+</body>
+</html>

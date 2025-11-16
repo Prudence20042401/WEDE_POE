@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apply | Kopano Construction Skills Centre</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Apply to join Kopano Construction Skills Centre and gain practical construction skills that empower youth for real opportunities in the construction industry.">
+  <meta name="keywords" content="Kopano, Construction Training, Apply, Skills Centre, Youth Development, Building Skills Courses">
+  <meta name="author" content="Kopano Construction Skills Centre">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Kopano Construction Skills Centre</h1>
+<nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="courses.html">Courses</a>
+        <a href="apply.html"class="active">Apply</a>
+        <a href="enquiry.html">Enquiry</a>
+        <a href="contact.html">Contact</a>
+        <a href="donate.html">Donate</a>
+        <a href="gallery.html">Gallery</a>
+    </nav>
+</header>
+
+<section>
+  <h2>Application Form</h2>
+  <p>Apply to join one of our hands-on construction training programmes. Kopano Construction Skills Centre equips youth with practical skills that open real opportunities in the construction industry.</p>
+
+  <!-- Application Form -->
+  <form id="applyForm" novalidate>
+    
+    <label for="fullname">Full Name</label>
+    <input type="text" id="fullname" name="fullname" required minlength="3" aria-required="true">
+
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" required aria-required="true">
+
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required placeholder="e.g. 0761234567">
+
+    <label for="course">Preferred Course</label>
+    <select id="course" name="course" required aria-required="true">
+      <option value="">-- Select --</option>
+      <option value="bricklaying">Bricklaying</option>
+      <option value="plastering">Plastering</option>
+      <option value="tiling">Tiling</option>
+      <option value="carpentry">Carpentry</option>
+      <option value="health_safety">Health & Safety Basics</option>
+    </select>
+
+    <label for="motivation">Why do you want to join?</label>
+    <textarea id="motivation" name="motivation" rows="4" required minlength="10"></textarea>
+
+    <button type="submit">Submit Application</button>
+  </form>
+
+  <!-- JS Output Message -->
+  <p id="applyMessage" style="margin-top:15px; font-weight:bold;"></p>
+
+</section>
+
+<footer>
+  <p>© 2025 Kopano Construction Skills Centre</p>
+</footer>
+
+<script src="javascript/main.js"></script>
+</body>
+</html>

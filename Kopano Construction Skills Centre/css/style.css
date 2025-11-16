@@ -1,0 +1,411 @@
+/* ===============================
+   Global Styles
+================================ */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #fff;
+  
+    /* Background Image Settings */
+    background-image: url('https://images.stockcake.com/public/0/4/1/041e3069-0c43-4036-8bf6-74a11a14456c_large/construction-planning-meeting-stockcake.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
+  
+  /* ===============================
+     Header & Navigation
+  ================================ */
+  header {
+    background-color: rgba(76, 175, 80, 0.9);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  nav a:hover,
+  nav a.active {
+    text-decoration: underline;
+  }
+  
+  /* ===============================
+     Hero Section
+  ================================ */
+  .hero {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6); /* dark overlay */
+    margin: 20px;
+    border-radius: 10px;
+  }
+  
+  .hero h1 {
+    margin: 0;
+    font-size: 2.5rem;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    margin: 10px 0 20px;
+  }
+  
+  .hero button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .hero button:hover {
+    background-color: #45a049;
+  }
+  
+  /* ===============================
+     Content Sections
+  ================================ */
+  section {
+    background-color: rgba(0, 0, 0, 0.6);
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  h2 {
+    color: #4CAF50;
+  }
+  
+  /* ===============================
+     Forms
+  ================================ */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  form input,
+  form textarea,
+  form select {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  form button:hover {
+    background-color: #45a049;
+  }
+  
+  /* ===============================
+     Gallery
+  ================================ */
+  .gallery {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .gallery h2 {
+    color: green;
+    margin-bottom: 10px;
+  }
+  
+  .gallery p {
+    margin-bottom: 20px;
+    color: #eee;
+  }
+  
+  /* Gallery grid */
+.gallery-grid {
+    display: grid;
+    gap: 15px;
+  }
+  
+  /* Mobile: 1 column */
+  @media (max-width: 600px) {
+    .gallery-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* Tablet: 2 columns */
+  @media (min-width: 601px) and (max-width: 1024px) {
+    .gallery-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  /* Desktop: 3 columns */
+  @media (min-width: 1025px) {
+    .gallery-grid {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+  
+  .gallery-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    transition: transform 0.3s;
+  }
+  
+  .gallery-grid img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Lightbox effect (pure CSS) */
+  .lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    text-align: center;
+  }
+  
+  .lightbox img {
+    max-width: 90%;
+    max-height: 80%;
+  }
+  
+  .lightbox:target {
+    display: block;
+  }
+  
+  /* ===============================
+     Footer
+  ================================ */
+  footer {
+    background-color: rgba(51, 51, 51, 0.8);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  footer a {
+    color: #4CAF50;
+    text-decoration: none;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
+  
+/* ===============================
+   Custom Cursor
+================================ */
+.custom-cursor {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: #4CAF50;
+  border-radius: 50%;
+  pointer-events: none;  /* Cursor doesn’t block clicks */
+  transform: translate(-50%, -50%);
+  transition: width 0.2s, height 0.2s, background-color 0.3s ease;
+  z-index: 9999;
+}
+
+/* Cursor changes on link hover */
+a:hover ~ .custom-cursor {
+  background-color: #f44336; /* Red when hovering links */
+  width: 40px;
+  height: 40px;
+
+}
+/* Modal Styles */
+.donate-modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 9999; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.8); /* Black with transparency */
+  padding-top: 60px;
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 10px;
+  color: #333;
+}
+
+.close-btn {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.donation-options {
+  margin-top: 20px;
+}
+
+.option-btn {
+  display: block;
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px;
+  margin: 10px 0;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.option-btn:hover {
+  background-color: #45a049;
+}
+
+/* Form Containers */
+.form-container {
+  margin-top: 20px;
+}
+
+.back-btn {
+  background-color: #f44336;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+  width: 100%;
+}
+
+.back-btn:hover {
+  background-color: #e53935;
+}
+
+
+  /* ===============================
+     Responsive
+  ================================ */
+  @media (max-width: 768px) {
+    nav a {
+      display: block;
+      margin: 10px 0;
+    }
+  
+    .hero h1 {
+      font-size: 2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    body {
+      font-size: 14px;
+    }
+  
+    .hero {
+      padding: 50px 15px;
+    }
+  
+    .hero h1 {
+      font-size: 1.5rem;
+    }
+
+    /* ===============================
+   Courses Section
+================================ */
+.course-list article {
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 1px solid #4CAF50;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.accordion {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    text-align: left;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.accordion:hover {
+    background-color: #45a049;
+}
+
+.accordion-content {
+    display: none;
+    margin-top: 10px;
+}
+
+.accordion[aria-expanded="true"] + .accordion-content {
+    display: block;
+}
+
+.course-info {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.course-info span {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    flex: 1;
+    margin-right: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.course-info span:last-child {
+    margin-right: 0;
+    background-color: rgba(76, 175, 80, 0.8);
+}
+
+  }
